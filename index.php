@@ -40,7 +40,7 @@
         }
 
         th {
-            background-color: #4caf50;
+            background-color: #4f7ccd;
             color: white;
         }
 
@@ -50,7 +50,7 @@
         }
 
         .add-button {
-            background-color: #4caf50;
+            background-color: #4f7ccd;
             color: white;
             border: none;
             padding: 10px 20px;
@@ -81,7 +81,9 @@
 
 <div id="container">
     <h2 style="text-align: center;">User Data</h2>
-
+    <div class="button-container">
+    <a href="insert.php" class="add-button">Add User</a>
+</div>
 
 <?php
 include 'includes/db_connection.php';
@@ -90,7 +92,7 @@ try {
     $conn = connectDB();
 
     if ($conn) {
-        $sql = "SELECT id, name, email FROM users";
+        $sql = "SELECT user_id, name, email FROM users";
         $stmt = $conn->prepare($sql);
         $stmt->execute();
 
@@ -105,12 +107,12 @@ try {
                 </tr>";
         foreach ($result as $row) {
             echo "<tr>
-                    <td>{$row['id']}</td>
+                    <td>{$row['user_id']}</td>
                     <td>{$row['name']}</td>
                     <td>{$row['email']}</td>
                     <td>
                         <form action='edit.php' method='post'>
-                            <input type='hidden' name='edit_id' value='{$row['id']}'>
+                            <input type='hidden' name='edit_id' value='{$row['user_id']}'>
                             <button type='submit' class='edit-button'>Edit</button>
                         </form>
                     </td>
@@ -129,7 +131,9 @@ try {
 
 
 <div class="button-container">
-    <a href="insert.php" class="add-button">Add User</a>
+    <a href="product.php" class="add-button">Products</a>
+    <a href="customer.php" class="add-button">Customer</a>
+    <a href="order.php" class="add-button">Orders</a>
 </div>
 
 </div>

@@ -39,7 +39,7 @@
         }
 
         th {
-            background-color: #4caf50;
+            background-color: #b44933;
             color: white;
         }
 
@@ -49,7 +49,7 @@
         }
 
         .add-button {
-            background-color: #4caf50;
+            background-color: #b44933;
             color: white;
             border: none;
             padding: 10px 20px;
@@ -79,11 +79,11 @@
 <body>
 
 <div id="container">
-    <h2 style="text-align: center;">Product Data</h2>
+    <h2 style="text-align: center;">Customer Data</h2>
 
     
 <div class="button-container">
-    <a href="add_product.php" class="add-button">Add Product</a>
+    <a href="add_customer.php" class="add-button">Add Customer</a>
 </div>
 
 <?php
@@ -93,7 +93,7 @@ try {
     $conn = connectDB();
 
     if ($conn) {
-        $sql = "SELECT * FROM product";
+        $sql = "SELECT * FROM customer";
         $stmt = $conn->prepare($sql);
         $stmt->execute();
 
@@ -101,21 +101,19 @@ try {
 
         echo "<table>
                 <tr>
-                    <th>Product ID</th>
+                    <th>Customer ID</th>
                     <th>Name</th>
-                    <th>Stocks</th>
-                    <th>Status</th>
+                    <th>Email</th>
                     <th>Action</th>
                 </tr>";
         foreach ($result as $row) {
             echo "<tr>
-                    <td>{$row['p_id']}</td>
-                    <td>{$row['p_name']}</td>
-                    <td>{$row['p_price']}</td>
-                    <td>{$row['p_status']}</td>
+                    <td>{$row['c_id']}</td>
+                    <td>{$row['c_name']}</td>
+                    <td>{$row['c_email']}</td>
                     <td>
                         <form action='edit_product.php' method='post'>
-                            <input type='hidden' name='edit_product_id' value='{$row['p_id']}'>
+                            <input type='hidden' name='edit_product_id' value='{$row['c_id']}'>
                             <button type='submit' class='edit-button'>Edit</button>
                         </form>
                     </td>
@@ -134,7 +132,7 @@ try {
 
 <div class="button-container">
     <a href="index.php" class="add-button">Users</a>
-    <a href="customer.php" class="add-button">Customer</a>
+    <a href="product.php" class="add-button">Products</a>
     <a href="order.php" class="add-button">Orders</a>
 </div>
 

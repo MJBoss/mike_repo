@@ -83,6 +83,9 @@
         <label for="product_stocks">Stocks:</label>
         <input type="number" name="product_stocks" id="product_stocks" required>
 
+        <label for="product_status">Status:</label>
+        <input type="text" name="product_status" id="product_status" required>
+
         <div class="button-container">
             <button type="submit">Add Product</button>
         </div>

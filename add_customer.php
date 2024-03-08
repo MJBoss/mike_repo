@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add User</title>
+    <title>Add Product</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -31,13 +31,13 @@
 
         label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 5px;
         }
 
         input {
             width: 100%;
             padding: 8px;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             box-sizing: border-box;
         }
 
@@ -53,23 +53,45 @@
             cursor: pointer;
             border-radius: 4px;
         }
+
+        a {
+            color: #4caf50;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
 
 <div id="container">
-    <h2 style="text-align: center;">Add User</h2>
+    <h2 style="text-align: center;">Add Customer</h2>
 
-    <form action="includes/insertion.php" method="post">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
+    <form action="includes/insert_cust.php" method="post">
+        <label for="c_name">Customer Name:</label>
+        <input type="text" name="c_name" id="c_name" required>
 
-        <label for="email">Email:</label>
-        <input type="text" id="email" name="email" required>
+        <label for="c_email">Customer Email:</label>
+        <input type="email" name="c_email" id="c_email" required>
 
-        <button type="submit">Insert</button>
-        <a href="index.php">Back to User List</a>
+    
+        <div class="button-container">
+            <button type="submit">Add Customer</button>
+        </div>
     </form>
+
+    <div class="button-container">
+        <a href="customer.php">Back to Customer List</a>
+    </div>
 </div>
 
 </body>
