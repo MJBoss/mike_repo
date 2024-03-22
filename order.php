@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE HTML>
 <html lang="en">
 <!--test-->
@@ -120,9 +122,9 @@ try {
                     <td>{$row['quantity']}</td>
                     <td>{$row['date']}</td>
                     <td>
-                        <form action='edit_product.php' method='post'>
-                            <input type='hidden' name='edit_product_id' value='{$row['o_id']}'>
-                            <button type='submit' class='edit-button'>Edit</button>
+                        <form action='report-print.php' method='post'>
+                            <input type='hidden' name='edit' value='{$row['o_id']}'>
+                            <button type='submit' class='edit-button'>View</button>
                         </form>
                     </td>
                 </tr>";

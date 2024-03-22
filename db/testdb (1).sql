@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 08, 2024 at 03:48 AM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Generation Time: Mar 22, 2024 at 01:45 AM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -30,6 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `customer` (
   `c_id` int(20) NOT NULL,
   `c_name` varchar(50) NOT NULL,
+  `c_address` varchar(50) NOT NULL,
   `c_email` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -37,10 +38,10 @@ CREATE TABLE `customer` (
 -- Dumping data for table `customer`
 --
 
-INSERT INTO `customer` (`c_id`, `c_name`, `c_email`) VALUES
-(1, 'Test', 'test@test.com'),
-(2, 'Mike', 'mike@test.com'),
-(3, 'John', 'test@test.com');
+INSERT INTO `customer` (`c_id`, `c_name`, `c_address`, `c_email`) VALUES
+(1, 'Test', 'test address', 'test@test.com'),
+(2, 'Mike', 'test address', 'mike@test.com'),
+(3, 'John', 'test address', 'test@test.com');
 
 -- --------------------------------------------------------
 
@@ -62,8 +63,8 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`o_id`, `p_id`, `c_id`, `user_id`, `quantity`, `date`) VALUES
-(2, 1, 1, 0, 1, '2024-03-08'),
-(3, 2, 2, 0, 5, '2024-03-08');
+(2, 1, 1, 1001, 1, '2024-03-08'),
+(3, 2, 2, 1001, 5, '2024-03-08');
 
 -- --------------------------------------------------------
 
