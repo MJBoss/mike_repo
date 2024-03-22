@@ -2,7 +2,7 @@
 
 $_SESSION['edit'] = $_POST["edit"];
 
-var_dump($_SESSION);
+
 
   if(isset($_SESSION['edit']) && !empty($_SESSION['edit'])) {
     $editid = $_SESSION['edit'];
